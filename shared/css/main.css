@@ -1,0 +1,101 @@
+.dark {
+    --primary-bg: #100B18;
+    --primary-bg-80: rgba(16, 11, 24, 0.80);
+
+    --secondary-bg: #45A29E;
+    --secondary-bg-75: rgba(69, 162, 158, 0.75);
+
+    --emphasis-bg: #1F2838;
+    --emphasis-bg-25: rgba(31, 40, 56, 0.25);
+    --emphasis-bg-75: rgba(31, 40, 56, 0.75);
+
+    --primary-text: #C5C6C7;
+    --primary-text-10: rgba(197, 198, 199, 0.10);
+
+    --secondary-text: #FEFFFF;
+    --secondary-text-20: rgba(254, 255, 255, 0.20);
+
+    --emphasis-text: #66FCF1;
+    --emphasis-text-10: rgba(102, 252, 241, 0.10);
+    --emphasis-text-20: rgba(102, 252, 241, 0.20);
+}
+
+/*.light {*/
+/*    --main-bg: #FEFFFF;*/
+/*    --hover-bg: #17252A;*/
+/*    --selected-bg: #2B7A78;*/
+/*    --main-text: #000000;*/
+/*    --hover-text: #17252A;*/
+/*    --selected-text: #3AAFA9;*/
+/*}*/
+
+/*animation*/
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fade-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes zoom-in-ani {
+    from {scale: 95%}
+    to {scale: 100%}
+}
+
+@keyframes zoom-out-ani {
+    from {scale: 100%}
+    to {scale: 95%}
+}
+
+@keyframes backdrop-blur {
+    from {backdrop-filter: blur(0px)}
+    to {backdrop-filter: blur(3px)}
+}
+
+@keyframes backdrop-unblur {
+    from {backdrop-filter: blur(3px)}
+    to {backdrop-filter: blur(0px)}
+}
+
+* {
+    transition: all 0.2s ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+.border-top-primary-text-10 {
+    border-top: 1px solid var(--primary-text-10);
+}
+
+.border-bottom-radius-8 {
+    border-bottom-left-radius: 8px!important;
+    border-bottom-right-radius: 8px!important;
+}
+
+.border-top-radius-8 {
+    border-top-left-radius: 8px!important;
+    border-top-right-radius: 8px!important;
+}
+
+.outline-none {
+    outline: none;
+}
+
+.add-backdrop-blur {
+    animation-name: backdrop-blur;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.remove-backdrop-blur {
+    animation-name: backdrop-unblur;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}

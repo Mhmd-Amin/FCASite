@@ -1,0 +1,265 @@
+.header-logo {
+    height: 40px;
+    width: 60px;
+}
+
+.version-btn {
+    margin-bottom: 4px;
+    height: 28px;
+    background-color: var(--emphasis-bg);
+    color: var(--primary-text);
+    border: none;
+    border-radius: 20px;
+}
+
+.version-btn:hover {
+    /* TODO: the background color hover and version background color hover is same because of opacity */
+    background-color: var(--emphasis-text-20);
+}
+
+.version-list {
+    width: 160px;
+    background-color: var(--emphasis-bg);
+    left: 85px;
+    top: 40px;
+    border-radius: 8px;
+}
+
+.version-list a {
+    color: var(--primary-text);
+}
+
+.version-list a:hover {
+    background-color: var(--primary-text-10);
+    color: var(--secondary-text);
+}
+
+.header-menu-list {
+    border-right: 1px solid var(--emphasis-bg-25);
+}
+
+.header-menu-item {
+    color: var(--primary-text);
+}
+
+.header-menu-item:hover {
+    color: var(--emphasis-text);
+}
+
+.header-icon {
+    padding: 8px 12px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+}
+
+.header-icon i {
+    color: var(--primary-text);
+}
+
+.header-icon:hover {
+    background-color: var(--primary-text-10);
+}
+
+.header-icon:hover i {
+    color: var(--secondary-text);
+}
+
+.section-background-shadow {
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-bg-80);
+}
+
+.show-animation {
+    animation-name: fade-in, zoom-in-ani;
+    animation-duration: 0.2s;
+}
+
+.hide-animation {
+    animation-name: fade-out, zoom-out-ani;
+    animation-duration: 0.2s;
+}
+
+.search-box {
+    background-color: var(--emphasis-bg-75);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.search-form {
+    width: calc(100% - 36px);
+}
+
+.search-input {
+    width: calc(100% - 48px);
+}
+
+.search-input:focus-visible {
+    color: var(--primary-text);
+}
+
+.close-btn {
+    background-color: var(--emphasis-bg);
+    color: var(--emphasis-text);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.close-btn:hover {
+    background-color: var(--emphasis-text-20);
+}
+
+.no-recent-box {
+    height: 200px;
+}
+
+.not-found-box {
+    height: 300px;
+}
+
+.no-result-icon {
+    /*TODO: this font size must be change*/
+    font-size: 2.5rem;
+}
+
+.searched-word {
+    color: var(--secondary-text);
+}
+
+.recommend-title {
+    color: var(--secondary-text);
+}
+
+.recommend-btn {
+    padding: 8px 12px;
+    border: none;
+    color: var(--primary-text);
+    background-color: var(--emphasis-bg);
+}
+
+.recommend-btn:hover {
+    background-color: var(--emphasis-text-20);
+    color: var(--secondary-text);
+}
+
+.founded-section {
+    /* TODO: scroll bar must customize */
+    max-height: calc(100vh - 94px);
+}
+
+.search-topic {
+    margin-top: 40px;
+}
+
+.founded-opt {
+    display: block;
+    background-color: var(--emphasis-bg);
+    border-radius: 8px;
+    padding: 0 16px;
+    color: var(--primary-text);
+}
+
+.founded-opt:hover {
+    background-color: var(--secondary-bg-75);
+}
+
+.founded-opt:hover i {
+    color: var(--secondary-text);
+}
+
+.founded-opt:hover .founded-opt-icon {
+    background-color: transparent;
+}
+
+.founded-opt:hover .founded-opt-icon-border {
+    border: 1px solid var(--secondary-bg-75);
+    transition: border;
+    transition-delay: 0.1s;
+}
+
+.founded-text-sec {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.founded-opt-icon {
+    background-color: var(--primary-text-10);
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+}
+
+.search-mark {
+    background-color: transparent;
+    color: var(--secondary-text);
+}
+
+.header-menu {
+    background-color: var(--emphasis-bg-75);
+    border-radius: 8px;
+}
+
+.menu-link {
+    color: var(--primary-text);
+    width: 240px;
+    border-radius: 8px;
+}
+
+.menu-link:hover {
+    color: var(--emphasis-text)
+}
+
+.theme-section {
+    background-color: var(--secondary-text-20);
+    border-radius: 8px;
+    width: 123px;
+}
+
+.theme-btn {
+    color: var(--primary-text);
+    padding: 7px 0;
+}
+
+.theme-btn span {
+    color: var(--secondary-text);
+}
+
+.theme-options {
+    background-color: var(--secondary-text-20);
+    border-radius: 8px;
+    width: 123px;
+    top: 42px;
+}
+
+.theme-options button {
+    background-color: var(--emphasis-bg);
+    color: var(--primary-text);
+}
+
+.theme-options button:hover {
+    background-color: var(--emphasis-bg-75);
+    color: var(--secondary-text);
+}
+
+@media only screen and (min-width: 576px){
+    .version-list {
+        left: 93px;
+        top: 44px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .search-section {
+        padding: 8vh;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .search-section {
+        padding: 12vh;
+    }
+}
