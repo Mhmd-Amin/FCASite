@@ -1,0 +1,102 @@
+.blog-header {
+    padding: 64px 0;
+}
+
+.mail-input {
+    color: var(--secondary-text);
+    border: 1px solid var(--emphasis-bg);
+    padding: 0.5rem 0.75rem 0.5rem 3rem;
+    line-height: 1.75rem;
+    /*TODO: the font size must change*/
+}
+
+.mail-input:focus {
+    background-color: red;
+    border: 1px solid var(--secondary-bg);
+}
+
+.input-icon {
+    left: 1.1rem;
+    top: 0.65rem;
+}
+
+.subscribe-btn {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    border: none;
+    padding: 0.5rem 0.75rem;
+}
+
+.articles-list {
+    margin-bottom: 128px;
+    gap: 3.5rem;
+}
+
+.article-line {
+    border-left: 1px solid var(--primary-text-10);
+    height: calc(calc(100% - 16px) + 3.5rem);
+    top: 36px;
+    left: 7px;
+}
+
+.article-circle {
+    top: 16px;
+}
+
+.article-content {
+    display: block;
+/*    TODO: the article width is better to be 100vw*/
+}
+
+.article-content:hover {
+    background-color: var(--primary-text-10);
+}
+
+.article-time {
+    color: var(--primary-text);
+}
+
+.article-header {
+    color: var(--secondary-text);
+}
+
+.article-short-description {
+    color: var(--primary-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.article-link {
+    color: var(--secondary-bg);
+}
+
+@media only screen and (min-width: 768px) {
+    .article-content {
+        margin-left: 34px!important;
+        padding: 16px 20px!important;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .articles-list {
+        width: calc(100% - 200px);
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .article-time-lg {
+        left: -200px;
+        top: 14px;
+        min-width: 160px;
+        text-align: right;
+    }
+
+    .article-content {
+        margin-left: 31px;
+    }
+
+}

@@ -29,6 +29,10 @@
 /*    --selected-text: #3AAFA9;*/
 /*}*/
 
+.secondary-text {
+    color: var(--secondary-text);
+}
+
 /*animation*/
 @keyframes fade-in {
     from {opacity: 0;}
@@ -65,7 +69,7 @@
     animation-timing-function: ease-in-out;
 }
 
-body {
+.body {
     background-color: var(--primary-bg);
     color: var(--primary-text);
 }
@@ -74,14 +78,18 @@ body {
     border-top: 1px solid var(--primary-text-10);
 }
 
+.border-radius-8 {
+    border-radius: 0.5rem!important;
+}
+
 .border-bottom-radius-8 {
-    border-bottom-left-radius: 8px!important;
-    border-bottom-right-radius: 8px!important;
+    border-bottom-left-radius: 0.5rem!important;
+    border-bottom-right-radius: 0.5rem!important;
 }
 
 .border-top-radius-8 {
-    border-top-left-radius: 8px!important;
-    border-top-right-radius: 8px!important;
+    border-top-left-radius: 0.5rem!important;
+    border-top-right-radius: 0.5rem!important;
 }
 
 .outline-none {
@@ -98,4 +106,11 @@ body {
     animation-name: backdrop-unblur;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
+}
+
+.two-line-cut-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    line-clamp: 2;
 }
