@@ -11,6 +11,13 @@ function toggleVersions(element) {
         element.setAttribute("aria-expanded", "true");
         versionsList.classList.remove("d-none", "hide-animation");
         versionsList.classList.add("show-animation");
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                toggleVersions(element);
+                e.target.blur();
+            }
+        });
     }
 }
 

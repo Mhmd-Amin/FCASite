@@ -12,7 +12,7 @@
   <title>Title</title>
 </head>
 <body class="body dark">
-    <header class="header px-2 px-sm-3 py-1 py-sm-2">
+    <header class="header backdrop-blur z-1 position-fixed top-0 left-0 w-100 px-2 px-sm-3 py-1 py-sm-2">
         <section>
             <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center">
@@ -32,7 +32,33 @@
                         <a class="header-menu-item text-decoration-none py-1 px-2 mx-3" href="#">Blog</a>
                         <a class="header-menu-item text-decoration-none py-1 px-2 mx-3" href="#">About</a>
                     </div>
+                    <div class="section-background-shadow position-fixed d-none" id="menu-section" aria-labelledby="menu-btn">
+                        <div class="d-flex justify-content-end w-100" id="header-menu-box-id">
+                            <div class="header-menu p-3">
+                                <a class="menu-link d-block p-2 mb-2 rounded-top text-decoration-none">Docs</a>
+                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Blog</a>
+                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">About</a>
+                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Github</a>
+                                <div class="d-flex justify-content-between align-items-center border-top-primary-text-10 pt-3 pb-2 mx-2">
+                                    <span>Theme:</span>
+                                    <div class="theme-section d-flex justify-content-center position-relative px-2">
+                                        <button class="theme-btn d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" id="theme-btn-id" onclick="toggleTheme(this)">
+                                            <i class="bi bi-moon-stars" id="theme-icon-btn"></i>
+                                            <span id="theme-state">System</span>
+                                            <i class="bi bi-chevron-down"></i>
+                                        </button>
+                                        <div class="theme-options d-flex flex-column position-absolute d-none" id="themes-list">
+                                            <button class="border-0 border-top-radius-8 p-2" type="button" onclick="changeTheme(this)">Light</button>
+                                            <button class="border-0 p-2" type="button" onclick="changeTheme(this)">Dark</button>
+                                            <button class="border-0 border-bottom-radius-8 p-2" type="button" onclick="changeTheme(this)">System</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <button class="header-icon focus-visible-style-none" id="search-open-btn" aria-expanded="false" type="button" onclick="showSearch(this)"><i class="bi bi-search"></i></button>
+<!--                    TODO: the search button in lg screen size must replace with switch theme button-->
                     <a class="header-icon d-none d-lg-block" href="#"><i class="bi bi-github"></i></a>
                     <button class="header-icon d-block d-lg-none" id="menu-btn" aria-expanded="false" type="button" onclick="showMenu(this)"><i class="bi bi-three-dots-vertical"></i></button>
                     <div class="section-background-shadow search-section position-fixed d-none" id="search-section-id">
@@ -186,31 +212,6 @@
                                                 <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
                                             </div>
                                         </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="section-background-shadow position-fixed d-none" id="menu-section" aria-labelledby="menu-btn">
-                        <div class="d-flex justify-content-end w-100" id="header-menu-box-id">
-                            <div class="header-menu p-3">
-                                <a class="menu-link d-block p-2 mb-2 rounded-top text-decoration-none">Docs</a>
-                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Blog</a>
-                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">About</a>
-                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Github</a>
-                                <div class="d-flex justify-content-between align-items-center border-top-primary-text-10 pt-3 pb-2 mx-2">
-                                    <span>Theme:</span>
-                                    <div class="theme-section d-flex justify-content-center position-relative px-2">
-                                        <button class="theme-btn d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" id="theme-btn-id" onclick="toggleTheme(this)">
-                                            <i class="bi bi-moon-stars" id="theme-icon-btn"></i>
-                                            <span id="theme-state">System</span>
-                                            <i class="bi bi-chevron-down"></i>
-                                        </button>
-                                        <div class="theme-options d-flex flex-column position-absolute d-none" id="themes-list">
-                                            <button class="border-0 border-top-radius-8 p-2" type="button" onclick="changeTheme(this)">Light</button>
-                                            <button class="border-0 p-2" type="button" onclick="changeTheme(this)">Dark</button>
-                                            <button class="border-0 border-bottom-radius-8 p-2" type="button" onclick="changeTheme(this)">System</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
