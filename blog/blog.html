@@ -12,7 +12,7 @@
   <title>Title</title>
 </head>
 <body class="body dark">
-    <header class="header backdrop-blur z-1 position-fixed top-0 left-0 w-100 px-2 px-sm-3 py-1 py-sm-2">
+    <header class="header z-1 position-fixed top-0 left-0 w-100 px-2 px-sm-3 py-1 py-sm-2" id="header-id">
         <section>
             <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center">
@@ -226,10 +226,11 @@
         <section class="container">
 <!--          TODO: container class for size extra small has not padding bus here has padding! -->
             <header class="blog-header d-flex flex-column justify-content-center align-items-md-center px-1">
+                <div class="spacer"></div>
                 <h2 class="secondary-text">Latest Update</h2>
                 <p class="text-lg text-slate-700 dark:text-slate-400">All the latest FCA news, straight from the team.</p>
                 <form class="d-flex flex-column flex-sm-row flex-grow-1 gap-2 gap-sm-3 position-relative">
-                    <input class="mail-input bg-transparent w-100 border-radius-8 outline-none" type="text" placeholder="Subscribe via email">
+                    <input class="mail-input bg-transparent w-100 border-radius-8 outline-none" type="email" placeholder="Subscribe via email">
                     <i class="input-icon position-absolute bi bi-envelope-at"></i>
                     <button class="subscribe-btn border-radius-8" type="submit">Subscribe</button>
                 </form>

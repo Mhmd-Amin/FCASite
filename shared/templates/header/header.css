@@ -3,6 +3,17 @@
     border-bottom: 1px solid var(--emphasis-bg-25);
 }
 
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px);
+    z-index: -1;
+}
+
 .header-logo {
     height: 40px;
     width: 60px;
