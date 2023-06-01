@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="/shared/css/main.css">
     <link rel="stylesheet" href="/shared/templates/header/header.css">
+    <link rel="stylesheet" href="/doc/doc.css">
     <title>Title</title>
 </head>
 <body class="body dark">
@@ -57,7 +58,7 @@
                         </div>
                     </div>
                     <button class="header-icon focus-visible-style-none d-lg-none" id="search-open-btn" aria-expanded="false" type="button" onclick="showSearch(this)"><i class="bi bi-search"></i></button>
-                    <!--TODO: the search button in lg screen size must replace with switch theme button-->
+                    <!--                    TODO: the search button in lg screen size must replace with switch theme button-->
                     <button class="header-icon d-none d-lg-block" id="switch-theme-btn" aria-expanded="false" aria-controls="themes-list-lg" type="button" onclick="toggleTheme(this)"><i class="bi bi-moon-stars" id="theme-icon-btn-lg"></i></button>
                     <div class="theme-options d-none d-flex flex-column position-absolute" id="themes-list-lg">
                         <button class="theme-option-btn d-flex justify-content-start border-0 border-top-radius-8 px-2 py-1" type="button" onclick="changeTheme(this)" id="light-theme-btn-lg"><i class="bi bi-brightness-high me-2"></i><span>Light</span></button>
@@ -224,10 +225,78 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex d-lg-none justify-content-start border-top pt-2 mt-2">
+                <button class="topic-menu-btn" type="button" aria-expanded="false" onclick="showTopics(this)" id="open-topics-menu-btn-id"><i class="bi bi-list"></i></button>
+                <ul class="d-flex list-unstyled ms-2 my-auto" id="topic-address-bar-id">
+                    <li class="d-flex">Getting Started<i class="bi bi-chevron-right mx-1"></i></li>
+                    <li class="secondary-text">Installation</li>
+                </ul>
+            </div>
         </section>
     </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="/shared/templates/header/header.js"></script>
+    <main>
+        <section class="container" id="main-section">
+            <div class="spacer"></div>
+            <div class="d-lg-flex flex-lg-column">
+                <div class="topics-section-background-shadow d-none d-lg-block p-0" id="topics-section-id">
+                    <div class="topic-list list-unstyled overflow-y-auto position-fixed pt-lg-0" id="topics-list-section-id">
+                        <div class="topics-search-section d-none d-lg-block position-fixed" id="topics-search-section-lg-id">
+                            <div>
+                                <button class="topics-search-btn d-flex align-items-center" type="button" aria-expanded="false" onclick="showSearch(this)" id="topics-search-btn-id">
+                                    <i class="bi bi-search"></i>
+                                    <span class="flex-grow-1 text-start mx-3">Quick search...</span>
+                                    <span>Crtl k</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="spacer d-none d-lg-block"></div>
+                        <button class="topic-menu-btn btn-cross position-absolute d-lg-none" type="button" aria-expanded="false" onclick="closeTopics(this)" id="close-topics-menu-btn-id"><i class="bi bi-x"></i></button>
+                        <div>
+                            <h4>Getting Started</h4>
+                            <ul class="doc-list list-unstyled">
+                                <li><a class="element-active" href="#">Installation</a></li>
+                                <li><a href="#">Editor Setup</a></li>
+                                <li><a href="#">Using with Preprocessors</a></li>
+                                <li><a href="#">Upgrade Guide</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Getting Started</h4>
+                            <ul class="doc-list list-unstyled">
+                                <li><a href="#">Installation</a></li>
+                                <li><a href="#">Editor Setup</a></li>
+                                <li><a href="#">Using with Preprocessors</a></li>
+                                <li><a href="#">Upgrade Guide</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Getting Started</h4>
+                            <ul class="doc-list list-unstyled">
+                                <li><a href="#">Installation</a></li>
+                                <li><a href="#">Editor Setup</a></li>
+                                <li><a href="#">Using with Preprocessors</a></li>
+                                <li><a href="#">Upgrade Guide</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Getting Started</h4>
+                            <ul class="doc-list list-unstyled">
+                                <li><a href="#">Installation</a></li>
+                                <li><a href="#">Editor Setup</a></li>
+                                <li><a href="#">Using with Preprocessors</a></li>
+                                <li><a href="#">Upgrade Guide</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="/shared/templates/header/header.js"></script>
+<script src="/doc/doc.js"></script>
 </body>
 </html>

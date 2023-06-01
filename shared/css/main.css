@@ -12,6 +12,7 @@
     --primary-text: #C5C6C7;
     --primary-text-10: rgba(197, 198, 199, 0.10);
 
+
     --secondary-text: #FEFFFF;
     --secondary-text-20: rgba(254, 255, 255, 0.20);
 
@@ -117,4 +118,18 @@
 
 .spacer {
     height: 56px;
+}
+
+.border-top {
+    border-top: 1px solid var(--emphasis-bg-25)!important;
+}
+
+.section-background-shadow {
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-bg-80);
+    z-index: 1;
 }

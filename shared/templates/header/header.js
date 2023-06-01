@@ -11,9 +11,9 @@ function toggleVersions(element) {
         element.setAttribute("aria-expanded", "true");
         versionsList.classList.remove("d-none", "hide-animation");
         versionsList.classList.add("show-animation");
-
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
+                // console.log("e close version");
                 toggleVersions(element);
                 e.target.blur();
             }
@@ -27,6 +27,7 @@ function showSearch(element) {
         let closeBtn = document.getElementById("search-close-btn")
         let searchBox = document.getElementById("search-box-id");
         let versionBtn = document.getElementById("version-btn-id");
+        let searchInput = document.getElementById("search-input-id");
 
         if (versionBtn.getAttribute("aria-expanded") === "true") {
             toggleVersions(versionBtn);
@@ -39,9 +40,11 @@ function showSearch(element) {
         searchSection.classList.add("add-backdrop-blur");
         searchBox.classList.add("show-animation");
         document.body.classList.add("overflow-hidden");
+        searchInput.focus();
 
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape") {
+                // console.log("e close search");
                 closeSearch(document.getElementById("search-close-btn"));
                 e.target.blur();
             }
@@ -52,8 +55,11 @@ function showSearch(element) {
 function closeSearch(element) {
     if (element.getAttribute("aria-expanded") === "true") {
         let searchSection = document.getElementById("search-section-id");
-        let searchBtn = document.getElementById("search-open-btn");
         let searchBox = document.getElementById("search-box-id");
+        let searchBtn = document.getElementById("topics-search-btn-id");
+        if (searchBtn.getAttribute("aria-expanded") === "false") {
+            searchBtn = document.getElementById("search-open-btn");
+        }
 
         element.setAttribute("aria-expanded", "false");
         searchBtn.setAttribute("aria-expanded", "false");
@@ -87,15 +93,18 @@ function showMenu(element) {
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
+            // console.log("e close menu");
             closeMenu(element);
             e.target.blur();
         }
     });
     menuSection.addEventListener("click", (e) => {
+        // console.log("c close menu");
         e.stopPropagation();
         closeMenu(element);
     });
     headerMenuBox.addEventListener("click", (e) => {
+        // console.log("c stop");
         e.stopPropagation();
     });
 }
@@ -123,33 +132,60 @@ function closeMenu(element) {
 function changeTheme(element) {
     // TODO: can change theme automatically by css because by using js when system color change the website theme isn't change
     let themeState = document.getElementById("theme-state");
-    let darkTheme = window.matchMedia('(prefers-color-scheme: dark)');
     let themeIcon = document.getElementById("theme-icon-btn");
+    let changeBtnLg = document.getElementById("theme-icon-btn-lg");
+    let themeBtnLg = document.getElementsByClassName("theme-option-btn-active")[0];
+    let darkTheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     if (element.innerText === "System") {
         themeState.innerText = element.innerText;
+        if (themeBtnLg.innerText !== "System") {
+            themeBtnLg.classList.remove("theme-option-btn-active");
+            document.getElementById("system-theme-btn-lg").classList.add("theme-option-btn-active");
+        }
         if (darkTheme.matches && themeIcon.classList.contains("bi-brightness-high")) {
             themeIcon.classList.remove("bi-brightness-high");
             themeIcon.classList.add("bi-moon-stars");
+            changeBtnLg.classList.remove("bi-brightness-high");
+            changeBtnLg.classList.add("bi-moon-stars");
         } else if (!darkTheme.matches && themeIcon.classList.contains("bi-moon-stars")) {
             themeIcon.classList.add("bi-brightness-high");
             themeIcon.classList.remove("bi-moon-stars");
+            changeBtnLg.classList.add("bi-brightness-high");
+            changeBtnLg.classList.remove("bi-moon-stars");
         }
     } else if (themeState.innerText !== element.innerText) {
         themeState.innerText = element.innerText;
         if (element.innerText === "Dark") {
+            if (themeBtnLg.innerText !== "Dark") {
+                themeBtnLg.classList.remove("theme-option-btn-active");
+                document.getElementById("dark-theme-btn-lg").classList.add("theme-option-btn-active");
+            }
             themeIcon.classList.remove("bi-brightness-high");
             themeIcon.classList.add("bi-moon-stars");
+            changeBtnLg.classList.remove("bi-brightness-high");
+            changeBtnLg.classList.add("bi-moon-stars");
         } else {
+            if (themeBtnLg.innerText !== "Light") {
+                themeBtnLg.classList.remove("theme-option-btn-active");
+                document.getElementById("light-theme-btn-lg").classList.add("theme-option-btn-active");
+            }
             themeIcon.classList.add("bi-brightness-high");
             themeIcon.classList.remove("bi-moon-stars");
+            changeBtnLg.classList.add("bi-brightness-high");
+            changeBtnLg.classList.remove("bi-moon-stars");
         }
     }
-    toggleTheme(document.getElementById("theme-btn-id"));
+
+    if (changeBtnLg.parentElement.getAttribute("aria-expanded") === "true") {
+        toggleTheme(changeBtnLg.parentElement);
+    } else {
+        toggleTheme(document.getElementById("theme-btn-id"));
+    }
 }
 
 function toggleTheme(element) {
-    let themesList = document.getElementById("themes-list");
+    let themesList = document.getElementById(element.getAttribute("aria-controls"));
     if (element.getAttribute("aria-expanded") === "false") {
         element.setAttribute("aria-expanded", "true");
         themesList.classList.remove("d-none", "hide-animation");

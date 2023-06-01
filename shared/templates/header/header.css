@@ -81,16 +81,6 @@
     color: var(--secondary-text);
 }
 
-.section-background-shadow {
-    width: 100vw;
-    height: 100vh;
-    padding: 15px;
-    top: 0;
-    left: 0;
-    background-color: var(--primary-bg-80);
-    z-index: 1;
-}
-
 .show-animation {
     animation-name: fade-in, zoom-in-ani;
     animation-duration: 0.2s;
@@ -262,6 +252,10 @@
     color: var(--secondary-text);
 }
 
+.theme-option-btn-active {
+    color: var(--emphasis-text)!important;
+}
+
 @media only screen and (min-width: 576px){
     .version-list {
         left: 93px;
@@ -278,5 +272,15 @@
 @media only screen and (min-width: 992px) {
     .search-section {
         padding: 12vh;
+    }
+
+    .theme-options {
+        width: 136px;
+        top: 50px;
+        right: 26px;
+    }
+
+    .theme-option-btn * {
+        transition: color 0s ease-in-out;
     }
 }
