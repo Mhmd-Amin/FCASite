@@ -12,9 +12,9 @@
     --primary-text: #C5C6C7;
     --primary-text-10: rgba(197, 198, 199, 0.10);
 
-
     --secondary-text: #FEFFFF;
     --secondary-text-20: rgba(254, 255, 255, 0.20);
+    --secondary-text-60: rgba(254, 255, 255, 0.50);
 
     --emphasis-text: #66FCF1;
     --emphasis-text-10: rgba(102, 252, 241, 0.10);
@@ -29,6 +29,19 @@
 /*    --hover-text: #17252A;*/
 /*    --selected-text: #3AAFA9;*/
 /*}*/
+
+
+.deep-ocean {
+    --background-code: #0F111A;
+    --function-code: #82AAFF;
+    --keyword-code: #C792EA;
+    --tag-code: #F07178;
+    --string-code: #C3E88D;
+    --operator-code: #89DDFF;
+    --attributes-code: #FFCB6B;
+    --number-code: #F78C6C;
+    --Parameter-code: #F78C6C;
+}
 
 .secondary-text {
     color: var(--secondary-text);
@@ -91,6 +104,10 @@
 .border-top-radius-8 {
     border-top-left-radius: 0.5rem!important;
     border-top-right-radius: 0.5rem!important;
+}
+
+.border-radius-12 {
+    border-radius: 0.75rem!important;
 }
 
 .outline-none {

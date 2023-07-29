@@ -1,4 +1,5 @@
 function showTopics(element) {
+    // TODO: topicAddressBar must implement
     // let topicAddressBar = document.getElementById("topic-address-bar-id");
     let topicsSection = document.getElementById("topics-section-id");
     let closeTopicBtn = document.getElementById("close-topics-menu-btn-id");
@@ -30,3 +31,58 @@ function closeTopics(element) {
 }
 
 // TODO: menus must close when click on others part
+
+function copyCode(element) {
+    let children = element.childNodes;
+    let codeBlock = document.getElementById(element.getAttribute("aria-controls")).childNodes[0];
+    let codeText = "";
+
+    toggleCopyIcon(children);
+
+    codeBlock.childNodes.forEach(line => {
+        let textLine = ""
+        if (line.tagName !== "BR") {
+            line.childNodes.forEach(word => {
+                textLine += word.innerText;
+            });
+            textLine += "\n";
+        }
+        else {
+            textLine += "\n";
+        }
+        codeText += textLine;
+    });
+
+    fallbackCopyTextToClipboard(codeText);
+
+    setTimeout(function () {
+        toggleCopyIcon(children);
+    }, 1500);
+}
+
+function toggleCopyIcon(icons) {
+    if (!icons[0].classList.contains("d-none")) {
+        icons[0].classList.add("d-none");
+        icons[1].classList.remove("d-none");
+    }
+    else {
+        icons[1].classList.add("d-none");
+        icons[0].classList.remove("d-none");
+    }
+}
+
+function fallbackCopyTextToClipboard(text) {
+    let textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+}
