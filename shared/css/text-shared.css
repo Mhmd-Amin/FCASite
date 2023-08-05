@@ -1,0 +1,29 @@
+.doc-section {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: var(--primary-text);
+}
+
+.doc-paragraph {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.doc-link {
+    color: var(--secondary-text);
+    border-bottom: 1px solid var(--emphasis-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.doc-link:hover {
+    transition: none!important;
+    border-bottom: 2px solid var(--emphasis-text);
+}
+
+.doc-strong {
+    color: var(--secondary-text);
+    font-weight: 600;
+}

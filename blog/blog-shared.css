@@ -1,0 +1,11 @@
+.article-time {
+    color: var(--primary-text);
+}
+
+.article-link {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    color: var(--secondary-bg);
+    text-decoration: none;
+    font-weight: 500;
+}

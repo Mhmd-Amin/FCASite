@@ -1,0 +1,35 @@
+.header-spacer {
+    height: 57px!important;
+}
+
+.article-time {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: var(--primary-text);
+}
+
+.article-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--secondary-text);
+    margin: 0.75rem 0 1.5rem 0;
+    font-weight: 800;
+}
+
+.writer-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 0.75rem;
+}
+
+.writer-name {
+    color: var(--secondary-text);
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.article-link:hover {
+    color: var(--emphasis-text);
+}

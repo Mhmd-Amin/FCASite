@@ -1,0 +1,45 @@
+.un-ordered-list-description {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.un-ordered-list-description li {
+    position: relative;
+    padding-left: 2.25rem;
+    margin: 0.5rem 0;
+    font-weight: 400;
+}
+
+.un-ordered-list-description li::before {
+    content: "\2014";
+    color: var(--secondary-text);
+    font-weight: 600;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+}
+
+.ordered-list-description {
+    counter-reset: li;
+    position: relative;
+    padding-left: 2.25rem;
+    margin: 1rem 0;
+    font-weight: 400;
+}
+
+.ordered-list-description li  {
+    list-style-type: none;
+    font-weight: 400;
+    margin: 0.5rem 0;
+}
+
+.ordered-list-description li::before {
+    content: counter(li)".";
+    counter-increment: li;
+    color: var(--secondary-text);
+    font-weight: 600;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+ }

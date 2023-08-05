@@ -8,10 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/shared/css/main.css">
     <link rel="stylesheet" href="/shared/templates/header/header.css">
+    <link rel="stylesheet" href="/shared/css/general-shared.css">
     <link rel="stylesheet" href="/shared/css/list-shared.css">
+    <link rel="stylesheet" href="/blog/blog-shared.css">
     <link rel="stylesheet" href="/shared/css/text-shared.css">
+    <!-- if it has code -->
     <link rel="stylesheet" href="/shared/css/code-shared.css">
-    <link rel="stylesheet" href="/doc/doc.css">
+    <link rel="stylesheet" href="/blog/article.css">
     <title>Title</title>
 </head>
 <body class="body dark deep-ocean">
@@ -61,7 +64,7 @@
                         </div>
                     </div>
                     <button class="header-icon focus-visible-style-none d-lg-none" id="search-open-btn" aria-expanded="false" type="button" onclick="showSearch(this)"><i class="bi bi-search"></i></button>
-                    <!--                    TODO: the search button in lg screen size must replace with switch theme button-->
+                    <!--TODO: the search button in lg screen size must replace with switch theme button-->
                     <button class="header-icon d-none d-lg-block" id="switch-theme-btn" aria-expanded="false" aria-controls="themes-list-lg" type="button" onclick="toggleTheme(this)"><i class="bi bi-moon-stars" id="theme-icon-btn-lg"></i></button>
                     <div class="theme-options d-none d-flex flex-column position-absolute" id="themes-list-lg">
                         <button class="theme-option-btn d-flex justify-content-start border-0 border-top-radius-8 px-2 py-1" type="button" onclick="changeTheme(this)" id="light-theme-btn-lg"><i class="bi bi-brightness-high me-2"></i><span>Light</span></button>
@@ -228,185 +231,49 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex d-lg-none justify-content-start border-top pt-2 mt-2">
-                <button class="topic-menu-btn" type="button" aria-expanded="false" onclick="showTopics(this)" id="open-topics-menu-btn-id"><i class="bi bi-list"></i></button>
-                <ul class="d-flex list-unstyled ms-2 my-auto" id="topic-address-bar-id">
-                    <li class="d-flex">Getting Started<i class="bi bi-chevron-right mx-1"></i></li>
-                    <li class="secondary-text">Installation</li>
-                </ul>
-            </div>
         </section>
     </header>
 
     <main>
-        <section class="container-lg px-3 px-sm-4" id="main-section">
-            <div class="spacer"></div>
-            <div class="d-lg-flex flex-lg-row">
-                <div class="topics-section-background-shadow d-none d-lg-block p-0" id="topics-section-id">
-                    <!-- Documentations list -->
-                    <div class="topic-list list-unstyled overflow-y-auto position-fixed position-lg-static pt-lg-0" id="topics-list-section-id">
-                        <div class="topics-search-section d-none d-lg-block position-fixed" id="topics-search-section-lg-id">
-                            <div>
-                                <button class="topics-search-btn d-flex align-items-center" type="button" aria-expanded="false" onclick="showSearch(this)" id="topics-search-btn-id">
-                                    <i class="bi bi-search"></i>
-                                    <span class="flex-grow-1 text-start mx-3">Quick search...</span>
-                                    <span>Crtl k</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="spacer d-none d-lg-block"></div>
-                        <button class="topic-menu-btn btn-cross position-absolute d-lg-none" type="button" aria-expanded="false" onclick="closeTopics(this)" id="close-topics-menu-btn-id"><i class="bi bi-x"></i></button>
+        <section class="container-md px-3 px-sm-4">
+            <div class="header-spacer"></div>
+            <div class="mt-5 px-3">
+                <header class="pb-5">
+                    <time class="article-time">September 18, 2022</time>
+                    <h1 class="article-title">New cipher algorithm and improve performance</h1>
+                    <div class="d-flex">
+                        <img class="writer-img border-radius-8" src="/shared/images/MobinNesari.jpg" alt="Mobin Nesari">
                         <div>
-                            <h4>Getting Started</h4>
-                            <ul class="doc-list list-unstyled">
-                                <li><a class="element-active" href="#">Installation</a></li>
-                                <li><a href="#">Editor Setup</a></li>
-                                <li><a href="#">Using with Preprocessors</a></li>
-                                <li><a href="#">Upgrade Guide</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Getting Started</h4>
-                            <ul class="doc-list list-unstyled">
-                                <li><a href="#">Installation</a></li>
-                                <li><a href="#">Editor Setup</a></li>
-                                <li><a href="#">Using with Preprocessors</a></li>
-                                <li><a href="#">Upgrade Guide</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Getting Started</h4>
-                            <ul class="doc-list list-unstyled">
-                                <li><a href="#">Installation</a></li>
-                                <li><a href="#">Editor Setup</a></li>
-                                <li><a href="#">Using with Preprocessors</a></li>
-                                <li><a href="#">Upgrade Guide</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4>Getting Started</h4>
-                            <ul class="doc-list list-unstyled">
-                                <li><a href="#">Installation</a></li>
-                                <li><a href="#">Editor Setup</a></li>
-                                <li><a href="#">Using with Preprocessors</a></li>
-                                <li><a href="#">Upgrade Guide</a></li>
-                            </ul>
+                            <h3 class="writer-name">Mobin Nesari</h3>
+                            <a class="article-link" href="https://github.com/MobinNesari81">@MobinNesari81</a>
                         </div>
                     </div>
-                </div>
-                <!-- Documentation -->
-                <div class="documentation px-1">
-                    <header>
-                        <h3 class="doc-headline">Getting Started</h3>
-                        <h1 class="doc-title">Shift Cipher</h1>
-                        <p class="doc-header-description m-0">The shift cipher, also known as the Caesar cipher, is a simple encryption technique that involves shifting the letters of a message by a certain number of positions in the alphabet. The shift value is a key that is used for both encryption and decryption.</p>
-                    </header>
-                    <div class="doc-main-description">
-                        <div class="doc-section pb-20">
-                            <p class="doc-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores, commodi doloremque et exercitationem fuga hic, iusto laudantium nam, pariatur quaerat quas qui quidem saepe voluptatibus. Aspernatur eos quo voluptatem!</p>
-                            <p class="doc-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium debitis incidunt ipsum <strong class="doc-strong">nobis obcaecati perferendis reiciendis repellat repellendus</strong> velit vitae. Aperiam cupiditate eius in nisi optio perferendis praesentium! <a class="doc-link" href="#">Accusamus</a> assumenda blanditiis commodi consequuntur debitis dolore eius ex iste mollitia qui.</p>
-                        </div>
-                        <div class="doc-section border-top pt-40 pb-20">
-                            <h1 class="doc-title">Encryption</h1>
-                            <p class="doc-paragraph">The encryption process for a shift cipher can be represented by the following formula:</p>
-                            <p class="doc-paragraph">\[E(x) = (x + k) \mod 26 \]</p>
-                            <p class="doc-paragraph">Where:</p>
-                            <ul class="un-ordered-list-description">
-                                <li><strong class="doc-strong">\(E(x)\)</strong> is the encrypted letter.</li>
-                                <li><strong class="doc-strong">\(x\)</strong> is the plaintext letter, represented as a number between 0 and 25. (i.e: A=0, B=1, C=2, ..., z=25).</li>
-                                <li><strong class="doc-strong">\(k\)</strong> is the shift value, represented as a number between 0 and 25.</li>
-                            </ul>
-                            <p class="doc-paragraph">To encrypt a message, each letter in the plaintext is shifted by the same amount specified by the shift value. For example, if the shift value is 3, then the letter 'A' becomes 'D', 'B' becomes 'E', and so on.</p>
-                        </div>
-                        <div class="doc-section border-top pt-40 pb-20">
-                            <h1 class="doc-title">Decryption</h1>
-                            <p class="doc-paragraph">The decryption process for a shift cipher can be represented by the following formula:</p>
-                            <p class="doc-paragraph">\[D(x) = (x - k) \mod 26 \]</p>
-                            <p class="doc-paragraph">Where:</p>
-                            <ul class="un-ordered-list-description">
-                                <li><strong class="doc-strong">\(D(x)\)</strong> is the decrypted letter.</li>
-                                <li><strong class="doc-strong">\(x\)</strong>  is the encrypted letter, represented as a number between 0 and 25.</li>
-                                <li><strong class="doc-strong">\(k\)</strong> is the shift value, represented as a number between 0 and 25.</li>
-                            </ul>
-                            <p class="doc-paragraph">To decrypt a message, each letter in the encrypted message is shifted back by the same amount specified by the shift value. For example, if the shift value is 3, then the letter 'D' becomes 'A', 'E' becomes 'B', and so on.</p>
-                            <p class="doc-paragraph"><strong class="doc-strong">Note :</strong> the shift value is the same for both encryption and decryption. If the shift value is known to an attacker, then the encryption can be easily broken by trying all possible shift values until the correct one is found. Therefore, the shift cipher is not recommended for secure communication, but can be useful for basic encryption needs or educational purposes.</p>
-                        </div>
-                        <div class="doc-section border-top pt-40 pb-20">
-                            <h1 class="doc-title">Implementation</h1>
-                            <p class="doc-paragraph">The implementation of the ShiftCipher class is based on the following steps:</p>
-                            <ol class="ordered-list-description pb-1">
-                                <li>Initialize the shift value during class instantiation.</li>
-                                <li>Define the <strong class="doc-strong">encrypt</strong> method that takes a message as a parameter and returns the encrypted message.</li>
-                                <li>Iterate over each character in the message and check if it is an alphabetic character.</li>
-                                <li>If the character is alphabetic, shift it by the shift value and add it to the encrypted message.</li>
-                                <li>If the character is not alphabetic, add it to the encrypted message as is.</li>
-                                <li>Define the <strong class="doc-strong">decrypt</strong> method that takes an encrypted message as a parameter and returns the original message.</li>
-                                <li>Iterate over each character in the message and check if it is an alphabetic character.</li>
-                                <li>If the character is alphabetic, shift it back by the shift value and add it to the decrypted message.</li>
-                                <li>If the character is not alphabetic, add it to the decrypted message as is.</li>
-                                <li>Return the encrypted or decrypted message as a string.</li>
-                            </ol>
-                        </div>
-                        <div class="doc-section border-top pt-40 pb-20">
-                            <h1 class="doc-title">Usage</h1>
-                            <p class="doc-paragraph">To use the ShiftCipher class in Python, first import the class into your code:</p>
-                            <div class="position-relative">
-                                <pre class="preformatted-doc border-radius-12" id="code-block-1"><code><span class="code-line"><span class="code-key-word">from</span><span class="code-space"> </span><span>Shift</span><span class="code-space"> </span><span class="code-key-word">import</span><span class="code-space"> </span><span>ShiftCipher</span></span></code></pre>
-                                <button class="copy-code-btn" type="button" onclick="copyCode(this)" aria-controls="code-block-1"><i class="bi bi-clipboard"></i><i class="d-none bi bi-check-lg"></i></button>
-                            </div>
-                            <p class="doc-paragraph">Then, create an instance of the ShiftCipher class with a shift value:</p>
-                            <div class="position-relative">
-                                <pre class="preformatted-doc border-radius-12" id="code-block-2"><code><span class="code-line"><span>cipher</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span class="code-function">ShiftCipher</span><span class="code-operator">(</span><span class="code-number">3</span><span class="code-operator">)</span></span></code></pre>
-                                <button class="copy-code-btn" type="button" onclick="copyCode(this)" aria-controls="code-block-2"><i class="bi bi-clipboard"></i><i class="d-none bi bi-check-lg"></i></button>
-                            </div>
-                            <p class="doc-paragraph">To encrypt a message, call the <strong>encrypt</strong> method with the message as a parameter:</p>
-                            <div class="position-relative">
-                                <pre class="preformatted-doc border-radius-12" id="code-block-3"><code><span class="code-line"><span>encrypted_message</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span>cipher</span><span class="code-operator">.</span><span class="code-function">encrypt</span><span class="code-operator">(</span><span class="code-string">"HELLO"</span><span class="code-operator">)</span></span></code></pre>
-                                <button class="copy-code-btn" type="button" onclick="copyCode(this)" aria-controls="code-block-3"><i class="bi bi-clipboard"></i><i class="d-none bi bi-check-lg"></i></button>
-                            </div>
-                            <p class="doc-paragraph">To decrypt an encrypted message, call the <strong>decrypt</strong> method with the encrypted message as a parameter:</p>
-                            <div class="position-relative">
-                                <pre class="preformatted-doc border-radius-12 mb-20" id="code-block-4"><code><span class="code-line"><span>encrypted_message</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span>cipher</span><span class="code-operator">.</span><span class="code-function">encrypt</span><span class="code-operator">(</span><span class="code-string">"KHOOR"</span><span class="code-operator">)</span></span></code></pre>
-                                <button class="copy-code-btn" type="button" onclick="copyCode(this)" aria-controls="code-block-4"><i class="bi bi-clipboard"></i><i class="d-none bi bi-check-lg"></i></button>
-                            </div>
-                        </div>
-                        <div class="doc-section border-top pt-40 pb-20">
-                            <h1 class="doc-title">Example</h1>
-                            <p class="doc-paragraph">Here's an example of how to use the ShiftCipher class to encrypt and decrypt a message:</p>
-                            <div class="position-relative">
-                                <pre class="preformatted-doc border-radius-12" id="code-block-5"><code><span class="code-line"><span class="code-key-word">from</span><span class="code-space"> </span><span>Shift</span><span class="code-space"> </span><span class="code-key-word">import</span><span class="code-space"> </span><span>ShiftCipher</span></span><br><span class="code-line"><span>cipher</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span class="code-function">ShiftCipher</span><span class="code-operator">(</span><span class="code-number">3</span><span class="code-operator">)</span></span><span class="code-line"><span>encrypted_message</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span>cipher</span><span class="code-operator">.</span><span class="code-function">encrypt</span><span class="code-operator">(</span><span class="code-string">"HELLO"</span><span class="code-operator">)</span></span><span class="code-line"><span>encrypted_message</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span>cipher</span><span class="code-operator">.</span><span class="code-function">encrypt</span><span class="code-operator">(</span><span>message</span><span class="code-operator">)</span></span><span class="code-line"><span>decrypted_message</span><span class="code-space"> </span><span class="code-operator">=</span><span class="code-space"> </span><span>cipher</span><span class="code-operator">.</span><span class="code-function">decrypt</span><span class="code-operator">(</span><span>encrypted_message</span><span class="code-operator">)</span></span><br><span class="code-line"><span class="code-function">print</span><span class="code-operator">(</span><span class="code-string">"Original message:"</span><span class="code-operator">,</span><span class="code-space"> </span><span>message</span><span class="code-operator">)</span></span><span class="code-line"><span class="code-function">print</span><span class="code-operator">(</span><span class="code-string">"Encrypted message:"</span><span class="code-operator">,</span><span class="code-space"> </span><span>encrypted_message</span><span class="code-operator">)</span></span><span class="code-line"><span class="code-function">print</span><span class="code-operator">(</span><span class="code-string">"Decrypted message:"</span><span class="code-operator">,</span><span class="code-space"> </span><span>decrypted_message</span><span class="code-operator">)</span></span></code></pre>
-                                <button class="copy-code-btn" type="button" onclick="copyCode(this)" aria-controls="code-block-5"><i class="bi bi-clipboard"></i><i class="d-none bi bi-check-lg"></i></button>
-                            </div>
-                            <p class="doc-paragraph">Output:</p>
-                            <div class="position-relative">
-                                <pre class="preformatted-doc border-radius-12 mb-20" id="code-block-6"><code><span class="code-line"><span class=>Original message</span><span class="code-operator">:</span> <span class="code-string">Hello, World!</span></span><span class="code-line"><span class=>Encrypted message</span><span class="code-operator">:</span> <span class="code-string">Khoor, Zroug!</span></span><span class="code-line"><span class=>Decrypted message</span><span class="code-operator">:</span> <span class="code-string">Hello, World!</span></span></code></pre>
-                                <button class="copy-code-btn" type="button" onclick="copyCode(this)" aria-controls="code-block-6"><i class="bi bi-clipboard"></i><i class="d-none bi bi-check-lg"></i></button>
-                            </div>
-                        </div>
-                        <div class="doc-section border-top pt-40 pb-20">
-                            <h1 class="doc-title">Limitations</h1>
-                            <p class="doc-paragraph">The shift cipher is a very simple encryption technique and has some limitations. For example, it can be easily broken by brute force or frequency analysis attacks. Additionally, the shift value is a weak key that can be easily guessed or discovered through trial and error. Therefore, the shift cipher is not recommended for secure communication, but can be useful for basic encryption needs or educational purposes.</p>
-                        </div>
+                </header>
+                <div>
+                    <div class="doc-section pb-5">
+                        <img class="content-img border-radius-12 mb-5" src="/shared/images/MobinNesari.jpg" alt="Mobin Nesari">
+                        <p class="doc-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias amet architecto doloremque dolorum earum hic inventore, labore minima mollitia nobis numquam omnis quam quo rerum similique, sunt suscipit ut veritatis.</p>
+                        <ul class="un-ordered-list-description">
+                            <li><a class="doc-link" href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. A animi consequatur inventore ratione voluptatem voluptatum.</li>
+                            <li><a class="doc-link" href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. A animi consequatur inventore ratione voluptatem voluptatum.</li>
+                            <li><a class="doc-link" href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. A animi consequatur inventore ratione voluptatem voluptatum.</li>
+                            <li><a class="doc-link" href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. A animi consequatur inventore ratione voluptatem voluptatum.</li>
+                            <li><a class="doc-link" href="#">Lorem ipsum dolor sit amet</a>, consectetur adipisicing elit. A animi consequatur inventore ratione voluptatem voluptatum.</li>
+                        </ul>
+                        <p class="doc-paragraph">Lorem ipsum dolor sit amet, <a class="doc-link" href="#">adipisicing elit</a> Architecto at iste qui. Aut eligendi iusto magnam <strong class="doc-strong">molestias</strong> nesciunt officiis praesentium!</p>
+                        <pre class="preformatted-doc border-radius-12" id="code-block-1"><code><span class="code-line"><span class="code-key-word">from</span><span class="code-space"> </span><span>Shift</span><span class="code-space"> </span><span class="code-key-word">import</span><span class="code-space"> </span><span>ShiftCipher</span></span></code></pre>
                     </div>
-                    <footer>
-                        <div class="d-flex flex-row justify-content-between mb-40">
-                            <a class="doc-footer-link " href="#"><i class="bi bi-chevron-left me-1"></i>Rail Fence Cipher</a>
-                            <a class="doc-footer-link" href="#">Vigenere Cipher<i class="bi bi-chevron-right ms-1"></i></a>
-                        </div>
-                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between border-top py-40">
-                            <p class="doc-footer-paragraph fw-normal mb-2 mb-0">This package is under the MIT license.</p>
-                            <p class="doc-footer-paragraph fw-normal">This package is under the MIT license.</p>
-                        </div>
-                    </footer>
                 </div>
             </div>
         </section>
     </main>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <!-- if it has code -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--    -->
+
     <script src="/shared/templates/header/header.js"></script>
-    <script src="/doc/doc.js"></script>
 </body>
 </html>
