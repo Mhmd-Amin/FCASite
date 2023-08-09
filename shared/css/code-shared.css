@@ -10,6 +10,10 @@
     white-space: pre;
 }
 
+.code-foreground {
+    color: var(--foreground-code);
+}
+
 .code-key-word {
     color: var(--keyword-code);
 }
@@ -32,10 +36,6 @@
 
 .code-number {
     color: var(--number-code);
-}
-
-.code-tag {
-    color: var(--tag-code);
 }
 
 .copy-code-btn {

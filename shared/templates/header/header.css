@@ -22,7 +22,7 @@
 .version-btn {
     margin-bottom: 4px;
     height: 28px;
-    background-color: var(--emphasis-bg);
+    background-color: var(--emphasis-bg-75);
     color: var(--primary-text);
     border: none;
     border-radius: 20px;
@@ -30,14 +30,20 @@
 
 .version-btn:hover {
     /* TODO: the background color hover and version background color hover is same because of opacity */
-    background-color: var(--emphasis-text-20);
+    background-color: var(--emphasis-bg);
+}
+
+.version-list-background {
+    background-color: var(--primary-bg);
+    box-shadow: 0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;
+    border-radius: 8px;
+    width: 160px;
+    left: 92px;
+    top: 44px;
 }
 
 .version-list {
-    width: 160px;
-    background-color: var(--emphasis-bg);
-    left: 85px;
-    top: 40px;
+    background-color: var(--emphasis-bg-75);
     border-radius: 8px;
 }
 
@@ -46,7 +52,7 @@
 }
 
 .version-list a:hover {
-    background-color: var(--primary-text-10);
+    background-color: var(--emphasis-bg);
     color: var(--secondary-text);
 }
 
