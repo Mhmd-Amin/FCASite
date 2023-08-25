@@ -21,11 +21,11 @@
     <header class="header z-1 position-fixed top-0 left-0 w-100 p-2 px-sm-3 py-sm-2" id="header-id">
         <section>
             <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-center">
-                    <img class="header-logo" src="/shared/images/FCA-dark.png" alt="FCA">
-                    <button class="version-btn ms-3 position-relative" id="version-btn-id" aria-expanded="false" type="button" onclick="toggleVersions(this)">v0.15<i class="bi bi-chevron-down ms-1"></i></button>
-                    <div class="version-list-background position-absolute d-none" id="version-list">
-                        <div class="version-list">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img class="header-logo" src="/shared/images/FCA-dark.png" alt="FCA">                    <div class="version-btn-background">
+                    <div class="version-btn-background position-relative">
+                        <button class="version-btn" id="version-btn-id" aria-expanded="false" type="button" onclick="toggleVersions(this)">v0.15<i class="bi bi-chevron-down ms-1"></i></button>
+                        <div class="version-list box-shadow position-absolute d-none" id="version-list">
                             <a class="d-block py-1 px-2 rounded-top text-decoration-none" href="#">Dev</a>
                             <a class="d-block py-1 px-2 text-decoration-none" href="#">0.14</a>
                             <a class="d-block py-1 px-2 text-decoration-none" href="#">0.13</a>
@@ -50,7 +50,7 @@
                                 <div class="d-flex justify-content-between align-items-center border-top-primary-text-10 pt-3 pb-2 mx-2">
                                     <span>Theme:</span>
                                     <div class="theme-section d-flex justify-content-center position-relative px-2">
-                                        <button class="theme-btn d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" aria-controls="themes-list" id="theme-btn-id" onclick="toggleTheme(this)">
+                                        <button class="theme-btn theme-section-dark d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" aria-controls="themes-list" id="theme-btn-id" onclick="toggleTheme(this)">
                                             <i class="bi bi-moon-stars" id="theme-icon-btn"></i>
                                             <span id="theme-state">System</span>
                                             <i class="bi bi-chevron-down"></i>
@@ -68,169 +68,13 @@
                     <button class="header-icon focus-visible-style-none d-lg-none" id="search-open-btn" aria-expanded="false" type="button" onclick="showSearch(this)"><i class="bi bi-search"></i></button>
                     <!--TODO: the search button in lg screen size must replace with switch theme button-->
                     <button class="header-icon d-none d-lg-block" id="switch-theme-btn" aria-expanded="false" aria-controls="themes-list-lg" type="button" onclick="toggleTheme(this)"><i class="bi bi-moon-stars" id="theme-icon-btn-lg"></i></button>
-                    <div class="theme-options d-none d-flex flex-column position-absolute" id="themes-list-lg">
+                    <div class="theme-options box-shadow shadow d-none d-flex flex-column position-absolute" id="themes-list-lg">
                         <button class="theme-option-btn d-flex justify-content-start border-0 border-top-radius-8 px-2 py-1" type="button" onclick="changeTheme(this)" id="light-theme-btn-lg"><i class="bi bi-brightness-high me-2"></i><span>Light</span></button>
                         <button class="theme-option-btn d-flex justify-content-start border-0 px-2 py-1" type="button" onclick="changeTheme(this)" id="dark-theme-btn-lg"><i class="bi bi-moon-stars me-2"></i><span>Dark</span></button>
                         <button class="theme-option-btn theme-option-btn-active d-flex justify-content-start border-0 border-bottom-radius-8 px-2 py-1" type="button" onclick="changeTheme(this)" id="system-theme-btn-lg"><i class="bi bi-display me-2"></i><span>System</span></button>
                     </div>
                     <a class="header-icon d-none d-lg-block" href="#"><i class="bi bi-github"></i></a>
                     <button class="header-icon d-block d-lg-none" id="menu-btn" aria-expanded="false" type="button" onclick="showMenu(this)"><i class="bi bi-three-dots-vertical"></i></button>
-                    <div class="section-background-shadow search-section position-fixed d-none" id="search-section-id">
-                        <div class="search-box" id="search-box-id">
-                            <header class="d-flex align-items-center justify-content-between p-3">
-                                <form class="search-form d-flex flex-grow-1 align-items-center" action="">
-                                    <label for=""><i class="bi bi-search"></i></label>
-                                    <input class="search-input px-2 px-sm-3 border-0 outline-none bg-transparent flex-grow-1" placeholder="Search documentation" type="text" id="search-input-id">
-                                </form>
-                                <button class="close-btn border-0 p-1" id="search-close-btn" aria-expanded="false" type="button" onclick="closeSearch(this)">ESC</button>
-                            </header>
-                            <div>
-                                <div class="no-recent-box d-flex align-items-center justify-content-center border-top-primary-text-10 border-bottom-radius-8">
-                                    <h5>No recent searches</h5>
-                                </div>
-                                <div class="not-found-box d-flex flex-column align-items-center justify-content-center border-top-primary-text-10 border-bottom-radius-8 d-none">
-                                    <i class="no-result-icon bi bi-emoji-frown"></i>
-                                    <h5>No result for "<span class="searched-word">salam</span>"</h5>
-                                    <div class="d-flex flex-column w-100 p-3">
-                                        <h6 class="recommend-title">Try searching for:</h6>
-                                        <div class="d-flex flex-column my-2">
-                                            <button class="recommend-btn border-top-radius-8 d-flex justify-content-between" type="button">Installation<i class="bi bi-chevron-right"></i></button>
-                                            <button class="recommend-btn d-flex justify-content-between" type="button">Encoder<i class="bi bi-chevron-right"></i></button>
-                                            <button class="recommend-btn border-bottom-radius-8 d-flex justify-content-between" type="button">Hill cipher<i class="bi bi-chevron-right"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="founded-section px-4 pb-4 border-top-primary-text-10 border-bottom-radius-8 overflow-y-auto d-none">
-                                    <div class="search-topic">
-                                        <h5>Installation</h5>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="search-topic">
-                                        <h5>Installation</h5>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="search-topic">
-                                        <h5>Installation</h5>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="search-topic">
-                                        <h5>Installation</h5>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="search-topic">
-                                        <h5>Installation</h5>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span><mark class="search-mark">Install</mark>ation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="search-topic">
-                                        <h5>Uninstallation</h5>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span>Uninstallation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                        <a class="founded-opt text-decoration-none my-2" href="#">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="founded-opt-icon founded-opt-icon-border d-flex align-items-center justify-content-center"><i class="bi bi-hash"></i></div>
-                                                <div class="founded-text-sec flex-grow-1 mx-3">
-                                                    <span>Uninstallation FCA in Linux</span>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-center"><i class="bi bi-chevron-right"></i></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

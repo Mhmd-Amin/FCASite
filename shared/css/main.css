@@ -6,14 +6,15 @@
     --secondary-bg-75: #45A29EBF;
 
     --emphasis-bg: #1F2838;
-    --emphasis-bg-25: #1f283840;
     --emphasis-bg-75: #1F2838BF;
 
     --primary-text: #C5C6C7;
     --primary-text-10: #B3C6C71A;
 
     --secondary-text: #FEFFFF;
-    --secondary-text-20: #FEFFFF1A;
+    --secondary-text-02: #FEFFFF05;
+    --secondary-text-04: #FEFFFF0A;
+    --secondary-text-20: #FEFFFF33;
     --secondary-text-50: #FEFFFF80;
 
     --emphasis-text: #5CE3D9;
@@ -24,40 +25,29 @@
 }
 
 .light {
-    /*--primary-bg: #FEFFFF;*/
-    /*--primary-bg-80: #FEFFFFCC;*/
+    --primary-bg: #FEFFFF;
+    --primary-bg-80: #FEFFFFCC;
 
-    /*--secondary-bg: #45A29E;*/
-    /*--secondary-bg-75: #45A29EBF;*/
+    --secondary-bg: #45A29E;
+    --secondary-bg-75: #45A29EBF;
 
-    /*!*--emphasis-bg: #1F283814;*!*/
-    /*!*!*--emphasis-bg-25: #1f283840;*!*!*/
-    /*!*--emphasis-bg-75: #1F28380A;*!*/
+    --emphasis-bg: #FDFDFD;
+    --emphasis-bg-75: #FDFDFDBF;
 
-    /*--emphasis-bg: #f6f6f6;*/
-    /*--emphasis-bg-25: #f6f6f640;*/
-    /*--emphasis-bg-75: #f6f6f6bf;*/
+    --primary-text: #2E3B4D;
+    --primary-text-10: #2E3B4D1A;
 
+    --secondary-text: #000000;
+    --secondary-text-02: #00000005;
+    --secondary-text-04: #0000000A;
+    --secondary-text-20: #00000033;
+    --secondary-text-50: #00000080;
 
-    /*!* 1A 33 4D 66 80*!*/
+    --emphasis-text: #5CE3D9;
+    --emphasis-text-10: #5CE3D91A;
+    --emphasis-text-20: #5CE3D933;
 
-
-    /*!*--emphasis-bg: #94a3b81a;*!*/
-    /*!*--emphasis-bg-25: #1f283840;*!*/
-    /*!*--emphasis-bg-75: #1F2838BF;*!*/
-
-    /*!*--primary-text: #334155;*!*/
-    /*!*--primary-text-10: #3341551A;*!*/
-
-    /*--secondary-text: #0F172A;*/
-    /*--secondary-text-20: #0F172A1A;*/
-    /*--secondary-text-50: #0F172A80;*/
-
-    /*--emphasis-text: #5CE3D9;*/
-    /*--emphasis-text-10: #5CE3D91A;*/
-    /*--emphasis-text-20: #5CE3D933;*/
-
-    /*--background-shadow: #00000073;*/
+    --background-shadow: #00000073;
 }
 
 
@@ -218,7 +208,7 @@
 }
 
 .border-top {
-    border-top: 1px solid var(--emphasis-bg-25)!important;
+    border-top: 1px solid var(--secondary-text-04)!important;
 }
 
 .section-background-shadow {

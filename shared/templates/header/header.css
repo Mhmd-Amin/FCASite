@@ -1,6 +1,6 @@
 .header {
     background-color: var(--primary-bg-80);
-    border-bottom: 1px solid var(--emphasis-bg-25);
+    border-bottom: 1px solid var(--secondary-text-04);
 }
 
 .header::before {
@@ -19,10 +19,15 @@
     width: 60px;
 }
 
+.version-btn-background {
+    margin: 0 0 0.25rem 1rem;
+    border-radius: 20px;
+    background-color: var(--emphasis-bg);
+}
+
 .version-btn {
-    margin-bottom: 4px;
     height: 28px;
-    background-color: var(--emphasis-bg-75);
+    background-color: var(--secondary-text-02);
     color: var(--primary-text);
     border: none;
     border-radius: 20px;
@@ -30,21 +35,15 @@
 
 .version-btn:hover {
     /* TODO: the background color hover and version background color hover is same because of opacity */
-    background-color: var(--emphasis-bg);
-}
-
-.version-list-background {
-    background-color: var(--primary-bg);
-    box-shadow: 0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;
-    border-radius: 8px;
-    width: 160px;
-    left: 92px;
-    top: 44px;
+    background-color: var(--secondary-text-04);
 }
 
 .version-list {
-    background-color: var(--emphasis-bg-75);
+    background-color: var(--emphasis-bg);
     border-radius: 8px;
+    width: 160px;
+    left: 0;
+    top: 38px;
 }
 
 .version-list a {
@@ -52,12 +51,12 @@
 }
 
 .version-list a:hover {
-    background-color: var(--emphasis-bg);
+    background-color: var(--secondary-text-02);
     color: var(--secondary-text);
 }
 
 .header-menu-list {
-    border-right: 1px solid var(--emphasis-bg-25);
+    border-right: 1px solid var(--secondary-text-04);
 }
 
 .header-menu-item {
@@ -227,9 +226,17 @@
 }
 
 .theme-section {
-    background-color: var(--secondary-text-20);
     border-radius: 8px;
     width: 123px;
+}
+
+.theme-section-dark {
+    background-color: var(--secondary-text-20);
+}
+
+.theme-section-light {
+    background-color: transparent;
+    border: 1px solid var(--primary-text-10);
 }
 
 .theme-btn {
@@ -254,19 +261,15 @@
 }
 
 .theme-options button:hover {
-    background-color: var(--emphasis-bg-75);
-    color: var(--secondary-text);
+    color: var(--emphasis-text);
 }
 
 .theme-option-btn-active {
     color: var(--emphasis-text)!important;
 }
 
-@media only screen and (min-width: 576px){
-    .version-list {
-        left: 93px;
-        top: 44px;
-    }
+.box-shadow {
+    box-shadow: 0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;
 }
 
 @media only screen and (min-width: 768px) {
@@ -282,7 +285,7 @@
 
     .theme-options {
         width: 136px;
-        top: 50px;
+        top: 68px;
         right: 26px;
     }
 

@@ -4,7 +4,7 @@
 
 .mail-input {
     color: var(--secondary-text);
-    border: 1px solid var(--emphasis-bg);
+    border: 1px solid var(--secondary-text-20);
     padding: 0.5rem 0.75rem 0.5rem 3rem;
     line-height: 1.75rem;
     /*TODO: the font size must change*/
