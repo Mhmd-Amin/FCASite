@@ -13,21 +13,11 @@
     <title>Title</title>
 </head>
 <body class="body dark">
-    <header class="header z-1 position-fixed top-0 left-0 w-100 p-2 px-sm-3 py-sm-2" id="header-id">
-        <section>
+    <header class="header p-2 px-sm-3 py-sm-2" id="header-id">
+        <section class="header-content">
             <div class="d-flex justify-content-between">
                 <div class="d-flex align-items-center justify-content-between">
                     <img class="header-logo" src="/shared/images/FCA-dark.png" alt="FCA">
-                    <div class="version-btn-background position-relative">
-                        <button class="version-btn" id="version-btn-id" aria-expanded="false" type="button" onclick="toggleVersions(this)">v0.15<i class="bi bi-chevron-down ms-1"></i></button>
-                        <div class="version-list box-shadow position-absolute d-none" id="version-list">
-                            <a class="d-block py-1 px-2 rounded-top text-decoration-none" href="#">Dev</a>
-                            <a class="d-block py-1 px-2 text-decoration-none" href="#">0.14</a>
-                            <a class="d-block py-1 px-2 text-decoration-none" href="#">0.13</a>
-                            <a class="d-block py-1 px-2 text-decoration-none" href="#">0.1</a>
-                            <a class="d-block py-1 px-2 text-decoration-none rounded-bottom border-top-primary-text-10" href="#">All version</a>
-                        </div>
-                    </div>
                 </div>
                 <div class="d-flex align-items-center gap-1">
                     <div class="d-none d-lg-flex header-menu-list justify-content-between align-items-center me-2 pe-1">
@@ -44,8 +34,8 @@
                                 <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Github</a>
                                 <div class="d-flex justify-content-between align-items-center border-top-primary-text-10 pt-3 pb-2 mx-2">
                                     <span>Theme:</span>
-                                    <div class="theme-section d-flex justify-content-center position-relative px-2">
-                                        <button class="theme-btn theme-section-dark d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" aria-controls="themes-list" id="theme-btn-id" onclick="toggleTheme(this)">
+                                    <div class="theme-section theme-section-dark d-flex justify-content-center position-relative px-2" id="theme-section-id">
+                                        <button class="theme-btn d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" aria-controls="themes-list" id="theme-btn-id" onclick="toggleTheme(this)">
                                             <i class="bi bi-moon-stars" id="theme-icon-btn"></i>
                                             <span id="theme-state">System</span>
                                             <i class="bi bi-chevron-down"></i>
@@ -76,7 +66,7 @@
     </header>
 
     <main>
-        <section class="container-md px-3 px-sm-4">
+        <section class="container-md px-3 px-sm-4 p-xxl-0">
 <!--          TODO: container class for size extra small has not padding bus here has padding! -->
             <header class="blog-header d-flex flex-column justify-content-center align-items-md-center">
                 <div class="spacer"></div>
@@ -97,7 +87,7 @@
                         <time class="article-time d-lg-none" datetime="2022-09-18">September 18, 2022</time>
                         <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
                         <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
-                        <span class="article-link" href="#">read more <i class="bi bi-chevron-right"></i></span>
+                        <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
                     </a>
                 </article>
                 <article class="d-md-flex flex-row position-relative">
@@ -108,7 +98,7 @@
                         <time class="article-time d-lg-none" datetime="2022-09-18">September 18, 2022</time>
                         <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
                         <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
-                        <span class="article-link" href="#">read more <i class="bi bi-chevron-right"></i></span>
+                        <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
                     </a>
                 </article>
                 <article class="d-md-flex flex-row position-relative">
@@ -119,7 +109,7 @@
                         <time class="article-time d-lg-none" datetime="2022-09-18">September 18, 2022</time>
                         <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
                         <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
-                        <span class="article-link" href="#">read more <i class="bi bi-chevron-right"></i></span>
+                        <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
                     </a>
                 </article>
                 <article class="d-md-flex flex-row position-relative">
@@ -130,7 +120,7 @@
                         <time class="article-time d-lg-none" datetime="2022-09-18">September 18, 2022</time>
                         <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
                         <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
-                        <span class="article-link" href="#">read more <i class="bi bi-chevron-right"></i></span>
+                        <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
                     </a>
                 </article>
             </div>

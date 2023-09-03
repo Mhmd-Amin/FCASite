@@ -1,6 +1,13 @@
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
     background-color: var(--primary-bg-80);
     border-bottom: 1px solid var(--secondary-text-04);
+    width: 100%;
+    z-index: 1;
 }
 
 .header::before {
@@ -12,6 +19,12 @@
     bottom: 0;
     backdrop-filter: blur(6px);
     z-index: -1;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1400px!important;
+    margin: auto;
 }
 
 .header-logo {

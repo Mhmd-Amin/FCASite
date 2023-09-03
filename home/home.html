@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/shared/css/main.css">
+    <link rel="stylesheet" href="/shared/templates/header/header.css">
+    <link rel="stylesheet" href="/shared/css/general-shared.css">
+    <link rel="stylesheet" href="/shared/css/list-shared.css">
+    <link rel="stylesheet" href="/shared/css/text-shared.css">
+    <!-- if it has code -->
+    <link rel="stylesheet" href="/shared/css/code-shared.css">
+    <link rel="stylesheet" href="/blog/blog-shared.css">
+    <link rel="stylesheet" href="/blog/blog.css">
+    <link rel="stylesheet" href="/home/home.css">
+    <title>Title</title>
+</head>
+<body class="body dark">
+    <header class="header p-2 px-sm-3 py-sm-2" id="header-id">
+        <section class="header-content">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center justify-content-between">
+                    <img class="header-logo" src="/shared/images/FCA-dark.png" alt="FCA">
+                </div>
+                <div class="d-flex align-items-center gap-1">
+                    <div class="d-none d-lg-flex header-menu-list justify-content-between align-items-center me-2 pe-1">
+                        <a class="header-menu-item text-decoration-none py-1 px-2 mx-3" href="#">Docs</a>
+                        <a class="header-menu-item text-decoration-none py-1 px-2 mx-3" href="#">Blog</a>
+                        <a class="header-menu-item text-decoration-none py-1 px-2 mx-3" href="#">About</a>
+                    </div>
+                    <div class="section-background-shadow position-fixed d-none d-flex justify-content-end align-items-start" id="menu-section" aria-labelledby="menu-btn">
+                        <div class="h-auto" id="header-menu-box-id">
+                            <div class="header-menu p-3">
+                                <a class="menu-link d-block p-2 mb-2 rounded-top text-decoration-none">Docs</a>
+                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Blog</a>
+                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">About</a>
+                                <a class="menu-link d-block p-2 mb-2 text-decoration-none" href="#">Github</a>
+                                <div class="d-flex justify-content-between align-items-center border-top-primary-text-10 pt-3 pb-2 mx-2">
+                                    <span>Theme:</span>
+                                    <div class="theme-section theme-section-dark d-flex justify-content-center position-relative px-2" id="theme-section-id">
+                                        <button class="theme-btn d-flex justify-content-between bg-transparent w-100 border-0 px-0" type="button" aria-expanded="false" aria-controls="themes-list" id="theme-btn-id" onclick="toggleTheme(this)">
+                                            <i class="bi bi-moon-stars" id="theme-icon-btn"></i>
+                                            <span id="theme-state">System</span>
+                                            <i class="bi bi-chevron-down"></i>
+                                        </button>
+                                        <div class="theme-options d-flex flex-column position-absolute d-none" id="themes-list">
+                                            <button class="border-0 border-top-radius-8 p-2" type="button" onclick="changeTheme(this)">Light</button>
+                                            <button class="border-0 p-2" type="button" onclick="changeTheme(this)">Dark</button>
+                                            <button class="border-0 border-bottom-radius-8 p-2" type="button" onclick="changeTheme(this)">System</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="header-icon focus-visible-style-none d-lg-none" id="search-open-btn" aria-expanded="false" type="button" onclick="showSearch(this)"><i class="bi bi-search"></i></button>
+                    <!--TODO: the search button in lg screen size must replace with switch theme button-->
+                    <button class="header-icon d-none d-lg-block" id="switch-theme-btn" aria-expanded="false" aria-controls="themes-list-lg" type="button" onclick="toggleTheme(this)"><i class="bi bi-moon-stars" id="theme-icon-btn-lg"></i></button>
+                    <div class="theme-options box-shadow shadow d-none d-flex flex-column position-absolute" id="themes-list-lg">
+                        <button class="theme-option-btn d-flex justify-content-start border-0 border-top-radius-8 px-2 py-1" type="button" onclick="changeTheme(this)" id="light-theme-btn-lg"><i class="bi bi-brightness-high me-2"></i><span>Light</span></button>
+                        <button class="theme-option-btn d-flex justify-content-start border-0 px-2 py-1" type="button" onclick="changeTheme(this)" id="dark-theme-btn-lg"><i class="bi bi-moon-stars me-2"></i><span>Dark</span></button>
+                        <button class="theme-option-btn theme-option-btn-active d-flex justify-content-start border-0 border-bottom-radius-8 px-2 py-1" type="button" onclick="changeTheme(this)" id="system-theme-btn-lg"><i class="bi bi-display me-2"></i><span>System</span></button>
+                    </div>
+                    <a class="header-icon d-none d-lg-block" href="#"><i class="bi bi-github"></i></a>
+                    <button class="header-icon d-block d-lg-none" id="menu-btn" aria-expanded="false" type="button" onclick="showMenu(this)"><i class="bi bi-three-dots-vertical"></i></button>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="banner-background">
+            <div class="container-lg px-3 px-sm-4 p-xxl-0">
+                <div class="spacer"></div>
+                <header class="banner">
+                    <div class="banner-text">
+                        <h1 class="font-size-c line-height-c fw-8">Famous Cipher Algorithms</h1>
+                        <p class="font-size-b line-height-b">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur deleniti eaque enim officia porro.</p>
+                    </div>
+                    <div class="statistics">
+                        <div>
+                            <img class="statistics-icon" src="../shared/SVGs/download-solid.svg">
+                            <div class="statistics-details">
+                                <span class="fw-bold">2.1+M</span>
+                                <p class="m-0" style="font-size: 0.875rem">Downloads</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="statistics-icon" src="../shared/SVGs/github.svg">
+                            <div class="statistics-details">
+                                <span class="fw-bold">2.1+M</span>
+                                <p class="m-0" style="font-size: 0.875rem">Github's Stars</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="general-btn" href="#">Get started</a>
+                    </div>
+                </header>
+            </div>
+        </section>
+        <section class="container-lg main-section px-sm-4 px-xxl-0">
+            <div>
+                <div class="tile-container">
+                    <article class="tile reliable gr-2">
+                        <div class="tile-text">
+                            <h2>Reliable</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad debitis fugiat illum itaque magnam nihil quibusdam, quo suscipit vitae.</p>
+                        </div>
+                        <div class="tile-icon">
+                            <i class="tile-icon bi bi-shield-fill-check"></i>
+                        </div>
+                    </article>
+                    <article class="tile fast gr-1">
+                        <div class="tile-text">
+                            <h2>Fast</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad debitis fugiat illum itaque magnam nihil quibusdam, quo suscipit vitae.</p>
+                        </div>
+                        <div class="tile-icon">
+                            <i class="tile-icon bi bi-lightning-fill"></i>
+                        </div>
+                    </article>
+                    <article class="tile modular gr-1">
+                        <div class="tile-text">
+                            <h2>Modular</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad debitis fugiat illum itaque magnam nihil quibusdam, quo suscipit vitae.</p>
+                        </div>
+                        <div class="tile-icon">
+                            <i class="bi bi-grid-fill"></i>
+                        </div>
+                    </article>
+                    <article class="tile easy-to-use gr-3">
+                        <div class="tile-text">
+                            <h2>Easy To Use</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad debitis fugiat illum itaque magnam nihil quibusdam, quo suscipit vitae.</p>
+                        </div>
+                        <div class="tile-icon">
+                            <i class="bi bi bi-hand-index-thumb-fill"></i>
+                        </div>
+                    </article>
+                </div>
+                <div class="article-section">
+                    <h2 class="section-name mb-4">latest news</h2>
+                    <div class="articles-container">
+                        <a class="article-content" href="#">
+                            <time class="article-time" datetime="2022-09-18">September 18, 2022</time>
+                            <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
+                            <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
+                            <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
+                        </a>
+                        <a class="article-content" href="#">
+                            <time class="article-time" datetime="2022-09-18">September 18, 2022</time>
+                            <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
+                            <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
+                            <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
+                        </a>
+                        <a class="article-content" href="#">
+                            <time class="article-time" datetime="2022-09-18">September 18, 2022</time>
+                            <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
+                            <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
+                            <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
+                        </a>
+                        <a class="article-content" href="#">
+                            <time class="article-time" datetime="2022-09-18">September 18, 2022</time>
+                            <h3 class="article-header mt-1 mt-md-0">New cipher algorithm and improve performance</h3>
+                            <p class="article-short-description two-line-cut-text">In this update we add Affine algorithm and replace pandas with polars, so the speed of encoding and decoding increase significantly</p>
+                            <span class="article-link">read more <i class="bi bi-chevron-right"></i></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="support-section">
+                    <h3 class="section-name mb-5">Supporter</h3>
+                    <div class="support">
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                        <div>
+                            <img src="../shared/SVGs/logos/Sbu-logo.svg" alt="SBU">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="border-top py-4">
+                <p class="text-center">This package is under the MIT license</p>
+            </footer>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/shared/templates/header/header.js"></script>
+</body>

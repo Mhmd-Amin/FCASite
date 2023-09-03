@@ -103,6 +103,7 @@ function showMenu(element) {
         toggleVersions(versionBtn);
     }
 
+    document.body.classList.add("overflow-y-hidden");
     menuSection.classList.remove("d-none", "remove-backdrop-blur");
     headerMenuBox.classList.remove("hide-animation");
     menuSection.classList.add("add-backdrop-blur");
@@ -140,6 +141,7 @@ function closeMenu(element) {
     headerMenuBox.classList.remove("show-animation");
     headerMenuBox.classList.add("hide-animation");
     menuSection.classList.add("remove-backdrop-blur");
+    document.body.classList.remove("overflow-y-hidden");
 
     setTimeout(function () {
         menuSection.classList.add("d-none");
