@@ -99,7 +99,7 @@ function showMenu(element) {
     let headerMenuBox = document.getElementById("header-menu-box-id");
     let versionBtn = document.getElementById("version-btn-id");
 
-    if (versionBtn.getAttribute("aria-expanded") === "true") {
+    if (versionBtn !== null && versionBtn.getAttribute("aria-expanded") === "true") {
         toggleVersions(versionBtn);
     }
 
